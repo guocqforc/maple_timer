@@ -43,7 +43,7 @@ class MapleTimer(object):
         if app:
             self.init_app(app, config)
 
-    def init_app(self, app, config):
+    def init_app(self, app, config=None):
         self.app = app
         config = config or dict()
         # 初始化数据
