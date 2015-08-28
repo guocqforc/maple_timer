@@ -128,11 +128,11 @@ class MapleTimer(object):
                     endpoint,
                     '%.02f%%' % (data['total_time_percent'] * 100),
                     '%.02f%%' % (data['count_percent'] * 100),
-                    '%.02f' % data['total_time'],
+                    '%.03f' % data['total_time'],
                     data['count'],
-                    '%.02f' % (float(data['total_time']) / data['count']),
-                    '%.02f' % data['upper_time'],
-                    '%.02f' % data['lower_time'],
+                    '%.03f' % (float(data['total_time']) / data['count']),
+                    '%.03f' % data['upper_time'],
+                    '%.03f' % data['lower_time'],
                 )
                 for endpoint, data in data_item_list])
 
