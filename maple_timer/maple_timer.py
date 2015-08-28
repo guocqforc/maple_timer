@@ -109,7 +109,7 @@ class MapleTimer(object):
         self.data_begin_time = datetime.datetime.now()
 
     def show_stat(self, from_time, to_time, data_item_list):
-            fmt = '%20s %20s %20s %12s %12s %12s %12s %12s'
+            fmt = '%30s %20s %20s %12s %12s %12s %12s %12s'
 
             str_data_list = [
                 fmt % ('endpoint',
