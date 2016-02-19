@@ -109,35 +109,36 @@ class MapleTimer(object):
         self.data_begin_time = datetime.datetime.now()
 
     def show_stat(self, from_time, to_time, data_item_list):
-            fmt = '%30s %20s %20s %12s %12s %12s %12s %12s'
+        fmt = '%30s %20s %20s %12s %12s %12s %12s %12s'
 
-            str_data_list = [
-                fmt % ('endpoint',
-                       'total_time_percent',
-                       'count_percent',
-                       'total_time',
-                       'count',
-                       'mean_time',
-                       'upper_time',
-                       'lower_time'
-                       ),
-            ]
+        str_data_list = [
+            fmt % ('endpoint',
+                   'total_time_percent',
+                   'count_percent',
+                   'total_time',
+                   'count',
+                   'mean_time',
+                   'upper_time',
+                   'lower_time'
+                   ),
+        ]
 
-            str_data_list.extend([
-                fmt % (
-                    endpoint,
-                    '%.02f%%' % (data['total_time_percent'] * 100),
-                    '%.02f%%' % (data['count_percent'] * 100),
-                    '%.03f' % data['total_time'],
-                    data['count'],
-                    '%.03f' % (float(data['total_time']) / data['count']),
-                    '%.03f' % data['upper_time'],
-                    '%.03f' % data['lower_time'],
-                )
-                for endpoint, data in data_item_list])
+        str_data_list.extend([
+                                 fmt % (
+                                     endpoint,
+                                     '%.02f%%' % (data['total_time_percent'] * 100),
+                                     '%.02f%%' % (data['count_percent'] * 100),
+                                     '%.03f' % data['total_time'],
+                                     data['count'],
+                                     '%.03f' % (float(data['total_time']) / data['count']),
+                                     '%.03f' % data['upper_time'],
+                                     '%.03f' % data['lower_time'],
+                                 )
+                                 for endpoint, data in data_item_list
+                                 ])
 
-            logger.info('from %s to %s\n%s',
-                         from_time,
-                         to_time,
-                         '\n'.join(str_data_list)
-                 )
+        logger.info('from %s to %s\n%s',
+                    from_time,
+                    to_time,
+                    '\n'.join(str_data_list)
+                    )

@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 setup(
     name="maple_timer",
-    version="1.0.6",
+    version="1.0.7",
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     install_requires=[],
     scripts=[],
